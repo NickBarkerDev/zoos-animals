@@ -50,3 +50,15 @@ class Zoo:
             return None
         else:
             return cls(results[0])
+    
+    @classmethod
+    def edit_zoo(cls, data):
+        query = "UPDATE zoos SET name = %(name)s, city = %(city)s, size_acres = %(size_acres)s, visitor_capacity = %(visitor_capacity)s, opening_date = %(opening_date)s WHERE id = %(id)s;"
+
+        return connectToMySQL("zoos_animals").query_db(query, data)
+    
+
+    @classmethod
+    def delete_zoo(cls, data):
+        query = "DELETE FROM zoos WHERE id = %(id)s;"
+        return connectToMySQL("zoos_animals").query_db(query, data)

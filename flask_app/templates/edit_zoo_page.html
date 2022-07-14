@@ -11,32 +11,32 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-10">
-                <h3>Edit ????</h3>
+                <h3>Edit {{ one_zoo.name }}</h3>
             </div>
             <div class="col">
-                <a href="/???">All zoos</a>
+                <a href="/zoos">All zoos</a>
             </div>
         </div>
-        <form action="/???" method="POST">
+        <form action="/zoos/{{ one_zoo.id }}/process_edit_zoo" method="POST">
             <div class="row">
                 <label>Name:</label>
-                <input type="text">
+                <input name="name" value="{{ one_zoo.name }}" type="text">
             </div>
             <div class="row">
                 <label>City:</label>
-                <input type="text">
+                <input name="city" value="{{ one_zoo.city }}" type="text">
             </div>
             <div class="row">
                 <label>Size (acres):</label>
-                <input type="number">
+                <input name="size_acres" value="{{ one_zoo.size_acres }}" type="number">
             </div>
             <div class="row">
                 <label>Visitor capacity:</label>
-                <input type="number">
+                <input name="visitor_capacity" value="{{ one_zoo.visitor_capacity }}" type="number">
             </div>
             <div class="row">
                 <label>Opening date:</label>
-                <input type="date">
+                <input type="date" name="opening_date" value="{{ one_zoo['opening_date'].strftime('%Y-%m-%d') }}">
             </div>
             <input type="submit" class="btn btn-primary" value="Edit zoo">
         </form>

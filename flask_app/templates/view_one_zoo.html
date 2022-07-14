@@ -21,7 +21,7 @@
         <p>City: {{ one_zoo['city'] }} </p>
         <p>Size: {{ one_zoo['size_acres'] }} acres</p>
         <p>Visitor capacity: {{ one_zoo['visitor_capacity'] }} </p>
-        <p>Date zoo opened: {{ one_zoo['opening_date'] }} </p>
+        <p>Date zoo opened: {{ one_zoo['opening_date'].strftime("%B %d, %Y") }} </p>
         <p>Animals found here:</p>
         <ul>
             <li>Placeholder List Item for animals in zoo</li>
