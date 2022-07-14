@@ -14,32 +14,32 @@
                 <h3>Welcome to the Zoos and Animals site!</h3>
             </div>
             <div class="col">
-                <a href="/???">All animals</a>
+                <a href="/zoos">All zoos</a>
             </div>
         </div>
         <div class="row">
             <h1>Add a Zoo</h1>
         </div>
-        <form action="/???" method="POST">
+        <form action="/process_add_zoo" method="POST">
             <div class="row">
-                <label>Name:</label>
-                <input type="text">
+                <label for="name">Name:</label>
+                <input type="text" name="name">
             </div>
             <div class="row">
-                <label>City:</label>
-                <input type="text">
+                <label for="city">City:</label>
+                <input type="text" name="city">
             </div>
             <div class="row">
-                <label>Size (acres):</label>
-                <input type="number">
+                <label for="size_acres">Size (acres):</label>
+                <input type="number" name="size_acres">
             </div>
             <div class="row">
-                <label>Visitor capacity:</label>
-                <input type="number">
+                <label for="visitor_capacity">Visitor capacity:</label>
+                <input type="number" name="visitor_capacity">
             </div>
             <div class="row">
-                <label>Opening date:</label>
-                <input type="date">
+                <label for="opening_date">Opening date:</label>
+                <input type="date" name="opening_date">
             </div>
             <input type="submit" class="btn btn-primary" value="Add zoo">
         </form>
