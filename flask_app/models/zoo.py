@@ -62,3 +62,8 @@ class Zoo:
     def delete_zoo(cls, data):
         query = "DELETE FROM zoos WHERE id = %(id)s;"
         return connectToMySQL("zoos_animals").query_db(query, data)
+
+    # @classmethod
+    # def reset_id(cls):
+    #     query = "ALTER TABLE zoos AUTO_INCREMENT = 1;"
+    #     return connectToMySQL("zoos_animals").query_db(query)

@@ -73,4 +73,5 @@ def delete_zoo(id):
     }
     # Add function in zoo model to delete zoo w/ given ID; call that function here
     zoo.Zoo.delete_zoo(data)
+    # zoo.Zoo.reset_ids()
     return redirect('/zoos')

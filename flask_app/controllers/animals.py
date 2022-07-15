@@ -14,7 +14,7 @@ def view_all_animals():
 
 @app.route('/animals/new')
 def add_animal():
-    return render_template('add_animal_page.html')
+    return render_template('add_animal_page.html', all_zoos = zoo.Zoo.get_all_zoos())
 
 @app.route('/animals/<int:id>/view')
 def view_one_animal(id):

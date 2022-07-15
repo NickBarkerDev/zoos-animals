@@ -14,34 +14,37 @@
                 <h1>Add an animal</h1>
             </div>
             <div class="col">
-                <a href="/???">All animals</a>
+                <a href="/animals">All animals</a>
             </div>
         </div>
-        <form action="/???" method="POST">
+        <form action="/animals/process_add_animal" method="POST">
             <div class="row">
-                <label>Name:</label>
-                <input type="text">
+                <label for="name">Name:</label>
+                <input type="text" name="name">
             </div>
             <div class="row">
-                <label>Species:</label>
-                <input type="text">
+                <label for="species">Species:</label>
+                <input type="text" name="species">
             </div>
             <div class="row">
-                <label>Weight (kg):</label>
-                <input type="number">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" name="weight">
             </div>
             <div class="row">
-                <label>Color:</label>
-                <input type="text">
+                <label for="color">Color:</label>
+                <input type="text" name="color">
             </div>
             <div class="row">
-                <label>Height (cm):</label>
-                <input type="number">
+                <label for="height">Height (cm):</label>
+                <input type="number" name="height">
             </div>
             <div class="row">
                 <label>Zoo:</label>
-                <select>
-                    <!-- Filled with zoos from the database -->
+                <select name="zoo_id">
+                    <option value="">--Please select an option--</option>
+                    {% for zoo in all_zoos %}
+                    <option value="{{ zoo.id }}">{{ zoo.name }}</option>
+                    {% endfor %}
                 </select>
             </div>
             <input type="submit" class="btn btn-primary" value="Add animal">
