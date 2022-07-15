@@ -18,7 +18,7 @@ def add_animal():
 
 @app.route('/animals/<int:id>/view')
 def view_one_animal(id):
-    return render_template('/view_one_animal.html', id=id)
+    return render_template('/view_one_an imal.html', id=id)
 
 @app.route('/animals/<int:id>/edit')
 def edit_animal(id):
@@ -28,6 +28,17 @@ def edit_animal(id):
 # Hidden Routes - ANIMALS
 @app.route('/process_add_animal', methods=['POST'])
 def process_add_animal():
+    data = {
+        "species": request.form['species'],
+        "name": request.form['name'],
+        "weight": request.form['weight'],
+        "color": request.form['color'],
+        "height": request.form['height'],
+        "birth_date": request.form['birth_date'],
+        "zoo_id": request.form['zoo_id']
+    }
+
+    animal.Animal.add_animal(data)
     return redirect('/animals')
 
 @app.route('/process_edit_animal', methods=['POST'])
