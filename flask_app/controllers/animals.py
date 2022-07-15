@@ -10,7 +10,7 @@ def animals_root_redirect():
 
 @app.route('/animals')
 def view_all_animals():
-    return render_template('all_animals.html')
+    return render_template('all_animals.html', all_animals = animal.Animal.get_all_animals())
 
 @app.route('/animals/new')
 def add_animal():
@@ -26,7 +26,7 @@ def edit_animal(id):
 
 
 # Hidden Routes - ANIMALS
-@app.route('/process_add_animal', methods=['POST'])
+@app.route('/animals/process_add_animal', methods=['POST'])
 def process_add_animal():
     data = {
         "species": request.form['species'],

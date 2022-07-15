@@ -19,3 +19,24 @@ class Animal:
         self.zoo = None # NEW: Linking one Zoo to this Animal
 
     # We will write our queries here and talk to MySQL
+
+    @classmethod
+    def add_animal(cls, data):
+        query = "INSERT INTO animals (species, name, weight, color, height, birth_date, zoo_id) VALUES ( %(species)s, %(name)s, %(weight)s, %(color)s, %(height)s, %(birth_date)s, %(zoo_id)s );"
+
+        return connectToMySQL("zoos_animals").query_db(query, data)
+
+    @classmethod
+    def get_all_animals(cls):
+        query = "SELECT * FROM animals"
+        results = connectToMySQL("zoos_animals").query_db(query)
+
+        if len(results) == 0:
+            return []
+        else:
+            animals = []
+            for animal in results:
+                new_animal = cls(animal)
+                animals.append(animal)
+                
+            return animals
