@@ -10,7 +10,7 @@ def animals_root_redirect():
 
 @app.route('/animals')
 def view_all_animals():
-    return render_template('all_animals.html', all_animals = animal.Animal.get_all_animals())
+    return render_template('all_animals.html', all_animals = animal.Animal.get_all_animals_with_zoos())
 
 @app.route('/animals/new')
 def add_animal():
@@ -18,7 +18,7 @@ def add_animal():
 
 @app.route('/animals/<int:id>/view')
 def view_one_animal(id):
-    return render_template('/view_one_an imal.html', id=id)
+    return render_template('/view_one_animal.html', id=id)
 
 @app.route('/animals/<int:id>/edit')
 def edit_animal(id):

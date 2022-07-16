@@ -14,7 +14,7 @@
                 <h3>Welcome to the Zoos and Animals site!</h3>
             </div>
             <div class="col">
-                <a href="/animals/new">All zoos</a>
+                <a href="/zoos">All zoos</a>
             </div>
         </div>
         <div class="row">
@@ -26,11 +26,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Species</th>
-                <th scope="col">Weight</th>
-                <th scope="col">Color</th>
-                <th scope="col">Height</th>
-                <th scope="col">Birth Date</th>
-                <th scope="col">Zoo ID</th>
+                <th scope="col">Zoo</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
@@ -40,15 +36,11 @@
                     <th scope="row">{{ animal.id }}</th>
                     <td>{{ animal.name }}</td>
                     <td>{{ animal.species }}</td>
-                    <td>{{ animal.weight }}</td>
-                    <td>{{ animal.color }}</td>
-                    <td>{{ animal.height }}</td>
-                    <td>{{ animal.birth_date }}</td>
-                    <td>{{ animal.zoo_id }}</td>
+                    <td>{{ animal.zoo.name }}</td>
                     <td>
-                        <a href="/zoos/{{ animal.id }}/view">View</a>
-                        <a href="/zoos/{{ animal.id }}/edit">Edit</a>
-                        <a href="/zoos/{{ animal.id }}/delete">Delete</a>
+                        <a href="/animals/{{ animal.id }}/view">View</a>
+                        <a href="/animals/{{ animal.id }}/edit">Edit</a>
+                        <a href="/animals/{{ animal.id }}/delete">Delete</a>
                     </td>
                 </tr>
                 {% endfor %}
